@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block corpo %}
+
+<a href="/adiciona/">Adicionar novo registro</a>
+<ul>
+{% for item in lista_itens %}
+	<li>
+		<a href="/remove/{{ item.id }}/">
+			<img src="static/media/imagens/lixeira.png" />
+		</a>
+		<a href="/item/{{ item.id }}/">
+			{{ item.data|date:"d/m/Y"}} - {{ item.entrada|time:"H:i" }} - {{ item.saida|time:"H:i" }} - {{ item.nome }}
+		</a>
+	</li>
+{% empty %}
+	<li>Sem pessoas cadastradas</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

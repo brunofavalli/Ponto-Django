@@ -1,0 +1,31 @@
+{% load staticfiles %}
+
+<html>
+<head>
+	{% block cabecalho %}
+	<title>Crud</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static "css/crud.css" %}">
+    {% endblock %}
+</head>
+<body>
+    {% block menu %}
+    <a href="/">Home</a> |
+    <a href="/">Contato</a> |
+    <a href="/">RSS</a>
+    {% endblock %}
+    <div class="page-header">
+	   <h1><a href="/">Ponto Eletrônico</a></h1>
+    </div>
+    <div class="content container">
+    	<div class="row">
+        	<div class="col-md-8">
+                {% block corpo %}
+	 			{% endblock %}
+            </div>
+        </div>
+    </div>	 
+</body>
+</html>
